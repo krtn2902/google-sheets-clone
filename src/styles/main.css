@@ -1,0 +1,167 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Spreadsheet Layout */
+.spreadsheet {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Toolbar Styles */
+.toolbar {
+    display: flex;
+    padding: 8px;
+    background-color: #f1f3f4;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.toolbar-section {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.toolbar-button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    background-color: white;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.toolbar-button:hover {
+    background-color: #f1f3f4;
+}
+
+.toolbar-select {
+    padding: 5px;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    background-color: white;
+}
+
+/* Formula Bar Styles */
+.formula-bar {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    background-color: #f1f3f4;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.cell-address {
+    width: 60px;
+    padding: 5px 10px;
+    font-weight: bold;
+    background-color: white;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.formula-input {
+    flex-grow: 1;
+    padding: 5px 10px;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+/* Grid Styles */
+.grid {
+    flex-grow: 1;
+    overflow: auto;
+    position: relative;
+}
+
+.column-headers {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: #f1f3f4;
+}
+
+.row {
+    display: flex;
+}
+
+.header-cell {
+    min-width: 80px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f3f4;
+    border: 1px solid #e0e0e0;
+    font-weight: 500;
+}
+
+.corner-cell {
+    min-width: 40px;
+    z-index: 3;
+    position: sticky;
+    left: 0;
+}
+
+.row-header {
+    min-width: 40px;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+}
+
+.cell {
+    min-width: 80px;
+    height: 24px;
+    padding: 0;
+    border: 1px solid #e0e0e0;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cell.selected {
+    outline: 2px solid #1a73e8;
+    z-index: 1;
+}
+
+.cell.editing {
+    overflow: visible;
+    z-index: 10;
+}
+
+.cell input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 1px 3px;
+}
+
+.cell-content {
+    width: 100%;
+    height: 100%;
+    padding: 1px 3px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
